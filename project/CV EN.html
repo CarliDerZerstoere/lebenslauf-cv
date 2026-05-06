@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nikolaus Riedl — CV</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink:     #111827;
+    --accent:  #0f4c81;
+    --light:   #f7f8fa;
+    --rule:    #e2e6ed;
+    --muted:   #64748b;
+    --page-w: 210mm;
+  }
+
+  html, body {
+    background: #dde0e6;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9pt;
+    color: var(--ink);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    width: var(--page-w);
+    background: #fff;
+    margin: 20px auto;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.13);
+  }
+
+  /* ── TOP HEADER BAND ── */
+  .top-header {
+    background: var(--accent);
+    color: #fff;
+    padding: 9mm 11mm 8mm;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 6mm;
+  }
+
+  .name-block h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28pt;
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+  }
+
+  .name-block .role {
+    font-size: 9pt;
+    font-weight: 400;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 2mm;
+  }
+
+  .contact-band {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5mm;
+    text-align: right;
+  }
+
+  .contact-item {
+    font-size: 7.5pt;
+    color: rgba(255,255,255,0.82);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2mm;
+  }
+
+  .contact-item a { color: rgba(255,255,255,0.82); text-decoration: none; }
+
+  .contact-item svg {
+    width: 3.5mm;
+    height: 3.5mm;
+    opacity: 0.6;
+    flex-shrink: 0;
+  }
+
+  /* ── PHOTO ── */
+  .photo-circle {
+    width: 28mm;
+    height: 28mm;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    border: 2.5px solid rgba(255,255,255,0.35);
+    flex-shrink: 0;
+  }
+
+  /* ── SUMMARY STRIPE ── */
+  .summary-stripe {
+    background: var(--light);
+    border-left: 3px solid var(--accent);
+    padding: 4mm 11mm;
+    font-size: 8.5pt;
+    line-height: 1.6;
+    color: var(--ink);
+    font-style: italic;
+  }
+
+  /* ── BODY ── */
+  .body {
+    display: grid;
+    grid-template-columns: 1fr 56mm;
+    gap: 0;
+  }
+
+  /* Main column */
+  .main-col {
+    padding: 7mm 8mm 9mm 11mm;
+    display: flex;
+    flex-direction: column;
+    gap: 6mm;
+    border-right: 1px solid var(--rule);
+  }
+
+  /* Side column */
+  .side-col {
+    padding: 7mm 9mm 9mm 7mm;
+    display: flex;
+    flex-direction: column;
+    gap: 6mm;
+  }
+
+  /* ── SECTION ── */
+  .section-title {
+    font-size: 6.5pt;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border-bottom: 1.5px solid var(--accent);
+    padding-bottom: 1.5mm;
+    margin-bottom: 3.5mm;
+  }
+
+  /* ── EXPERIENCE ── */
+  .entry {
+    margin-bottom: 4.5mm;
+  }
+
+  .entry:last-child { margin-bottom: 0; }
+
+  .entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 3mm;
+    margin-bottom: 0.5mm;
+  }
+
+  .entry-title {
+    font-size: 9.5pt;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .entry-date {
+    font-size: 7.5pt;
+    color: var(--muted);
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .entry-company {
+    font-size: 8pt;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 1.5mm;
+  }
+
+  .entry-loc {
+    font-size: 7pt;
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  .entry-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1mm;
+  }
+
+  .entry-bullets li {
+    font-size: 8pt;
+    line-height: 1.5;
+    padding-left: 3.5mm;
+    position: relative;
+    color: var(--ink);
+  }
+
+  .entry-bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 6pt;
+    top: 1.2mm;
+  }
+
+  /* ── EDUCATION (main) ── */
+  .edu-entry {
+    margin-bottom: 3.5mm;
+  }
+
+  .edu-entry:last-child { margin-bottom: 0; }
+
+  .edu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 3mm;
+  }
+
+  .edu-title {
+    font-size: 9pt;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .edu-date {
+    font-size: 7.5pt;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .edu-inst {
+    font-size: 8pt;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .edu-detail {
+    font-size: 7.5pt;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-top: 0.8mm;
+  }
+
+  .edu-thesis {
+    font-size: 7.5pt;
+    color: var(--ink);
+    font-style: italic;
+    line-height: 1.4;
+    margin-top: 0.6mm;
+  }
+
+  /* ── SIDEBAR SECTIONS ── */
+  .s-section-title {
+    font-size: 6.5pt;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border-bottom: 1.5px solid var(--rule);
+    padding-bottom: 1.5mm;
+    margin-bottom: 2.5mm;
+  }
+
+  /* Skills */
+  .skill-group {
+    margin-bottom: 2.5mm;
+  }
+
+  .skill-group-label {
+    font-size: 7pt;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1mm;
+  }
+
+  .skill-pill {
+    display: inline-block;
+    background: #eef2f8;
+    border-radius: 2px;
+    padding: 0.8mm 2mm;
+    font-size: 7pt;
+    color: var(--accent);
+    margin: 0.5mm 0.5mm 0.5mm 0;
+    font-weight: 500;
+  }
+
+  /* Languages */
+  .lang-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 7.5pt;
+    line-height: 1.8;
+    color: var(--ink);
+  }
+
+  .lang-level {
+    font-size: 7pt;
+    color: var(--muted);
+  }
+
+  /* Certs/details */
+  .detail-item {
+    font-size: 7.5pt;
+    color: var(--ink);
+    line-height: 1.6;
+    padding-left: 2.5mm;
+    position: relative;
+  }
+
+  .detail-item::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  @media print {
+    html, body { background: white; }
+    .page { margin: 0; box-shadow: none; }
+    @page { size: A4; margin: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- TOP HEADER -->
+  <div class="top-header">
+    <div style="display: flex; align-items: center; gap: 6mm;">
+      <img class="photo-circle" src="photo_cv.png" alt="Nikolaus Riedl">
+      <div class="name-block">
+        <h1>Nikolaus Riedl</h1>
+        <div class="role">Cybersecurity Analyst &amp; MSc Candidate</div>
+      </div>
+    </div>
+    <div class="contact-band">
+      <div class="contact-item">
+        <span>niki.riedl@kstp.at</span>
+        <svg viewBox="0 0 16 16" fill="none"><path d="M2 4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4Zm1.5.75L8 8.5l4.5-3.75" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="contact-item">
+        <span>+43 699 16056795</span>
+        <svg viewBox="0 0 16 16" fill="none"><path d="M2.5 4.5a1 1 0 0 1 1-1h.8c.4 0 .76.24.92.6l.8 1.9a1 1 0 0 1-.22 1.09l-.6.6a7 7 0 0 0 3.1 3.1l.6-.6a1 1 0 0 1 1.09-.22l1.9.8c.36.16.6.52.6.92v.8a1 1 0 0 1-1 1C5.7 13.5 2.5 10.3 2.5 6.3v-.8Z" stroke="currentColor" stroke-width="1.2"/></svg>
+      </div>
+      <div class="contact-item">
+        <span>Sankt Pölten, Austria</span>
+        <svg viewBox="0 0 16 16" fill="none"><path d="M8 1.5A4.5 4.5 0 0 0 3.5 6c0 3.5 4.5 8.5 4.5 8.5S12.5 9.5 12.5 6A4.5 4.5 0 0 0 8 1.5Zm0 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Z" fill="currentColor"/></svg>
+      </div>
+      <div class="contact-item">
+        <a href="https://linkedin.com/in/nikolaus-riedl-393a1327b/" target="_blank">linkedin.com/in/nikolaus-riedl</a>
+        <svg viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="2.5" stroke="currentColor" stroke-width="1.2"/><circle cx="5.5" cy="5.5" r="1" fill="currentColor"/><path d="M5.5 7.5v4M8 7.5v4M8 9.5a2 2 0 0 1 4 0v2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="summary-stripe">
+    Cybersecurity MSc candidate at TalTech Tallinn (GPA 4.24/5.0, graduating June 2026) with 1+ year hands-on SOC experience at T-Systems Austria. Expertise in Incident Detection &amp; Response, SIEM-based threat analysis (Splunk, Microsoft Sentinel), system forensics, and malware research. Thesis: LLM-based automated honeynet generation. Passionate about detection engineering, reverse engineering, and threat hunting.
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- MAIN COLUMN -->
+    <div class="main-col">
+
+      <!-- Experience -->
+      <div class="section">
+        <div class="section-title">Professional Experience</div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-title">SOC Analyst (Working Student, 20h/week)</div>
+            <div class="entry-date">Dec 2023 – Aug 2024</div>
+          </div>
+          <div class="entry-company">T-Systems Cyber Security Austria <span class="entry-loc">· Vienna, Austria</span></div>
+          <ul class="entry-bullets">
+            <li>Continued SOC operations part-time — threat detection, alert analysis, and client communication.</li>
+            <li>Independently built a secure ticket-synchronisation server between two platforms — adopted into production by the team.</li>
+            <li>KQL query development and detection rule optimisation in Microsoft Sentinel.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-title">SOC Analyst (Internship)</div>
+            <div class="entry-date">Sep 2023 – Nov 2023</div>
+          </div>
+          <div class="entry-company">T-Systems Cyber Security Austria <span class="entry-loc">· Vienna, Austria</span></div>
+          <ul class="entry-bullets">
+            <li>SOC triage and analysis across multiple client environments using Splunk, Microsoft Sentinel, and CrowdStrike EDR/XDR.</li>
+            <li>Incident Response: escalation, containment, and documentation per MITRE ATT&amp;CK framework and established playbooks.</li>
+            <li>Developed and optimised KQL queries for threat detection and alert tuning in Microsoft Sentinel.</li>
+            <li>Mapped IoCs to MITRE ATT&amp;CK techniques; client-facing review meetings in German and English.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-title">IT Security Intern</div>
+            <div class="entry-date">Jul 2023 – Aug 2023</div>
+          </div>
+          <div class="entry-company">Luware AG <span class="entry-loc">· Zurich, Switzerland</span></div>
+          <ul class="entry-bullets">
+            <li>Embedded in the Security Operations Team of a Swiss SaaS company (Microsoft UC solutions).</li>
+            <li>Development and maintenance of Information Security documentation and processes.</li>
+            <li>Identification and assessment of security risks; contributed to third-party security assessments.</li>
+            <li>Hands-on exposure to ISO 27001 and SOC 2 Type 2 frameworks.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-title">Postal Delivery Worker</div>
+            <div class="entry-date">Jul–Sep 2022 &amp; Mar–Sep 2021</div>
+          </div>
+          <div class="entry-company">Österreichische Post AG <span class="entry-loc">· Sankt Pölten, Austria</span></div>
+          <ul class="entry-bullets">
+            <li>Delivery of standard mail, parcels, and official government correspondence across an assigned district.</li>
+            <li>Cash disbursements of pensions and government payments — requiring a high level of trustworthiness and accuracy.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="entry-title">Military Service</div>
+            <div class="entry-date">Sep 2019 – 2020</div>
+          </div>
+          <div class="entry-company">Austrian Armed Forces <span class="entry-loc">· Sankt Pölten, Austria</span></div>
+          <ul class="entry-bullets">
+            <li>Mandatory conscript service — developed discipline, teamwork and resilience under operational conditions.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="section">
+        <div class="section-title">Education</div>
+
+        <div class="edu-entry">
+          <div class="edu-header">
+            <div class="edu-title">MSc Cybersecurity</div>
+            <div class="edu-date">Sep 2024 – Jun 2026</div>
+          </div>
+          <div class="edu-inst">TalTech — Tallinn University of Technology · Tallinn, Estonia</div>
+          <div class="edu-detail">120 ECTS (107 completed) · GPA: 4.24 / 5.0 · EQF Level 7</div>
+          <div class="edu-detail" style="margin-top:0.8mm;">Key courses: System Forensics (5), Cyber Incident Handling (5), Info Systems Attacks &amp; Defence (5), Cybersecurity Technologies I (5), Hardening OS &amp; Services (5), Math for CS (5), Human Aspects of CyberSec (5), Privacy-preserving Technologies (4), CPS Security (A), Security Management 1 &amp; 3 (A)</div>
+          <div class="edu-thesis">Thesis: <em>Automated Honeynet Generation from Natural Language: An LLM-Based Pipeline with Multi-Stage Validation and Empirical Evaluation</em></div>
+        </div>
+
+        <div class="edu-entry">
+          <div class="edu-header">
+            <div class="edu-title">BSc Information Security</div>
+            <div class="edu-date">Jul 2021 – Apr 2024</div>
+          </div>
+          <div class="edu-inst">FH Sankt Pölten · Sankt Pölten, Austria</div>
+          <div class="edu-detail">180 ECTS · 6 semesters full-time</div>
+          <div class="edu-detail" style="margin-top:0.8mm;">Focus areas: Software Security &amp; Ethical Hacking, Network Security, Cloud &amp; Infrastructure Security, Security Management (ISO 27001, ITIL, BCM)</div>
+          <div class="edu-detail" style="margin-top:0.8mm;">Core subjects: Windows/Unix System Administration, Networks &amp; Distributed Systems, Cryptography, Web &amp; Application Security, Digital Forensics, Security Audits &amp; Penetration Testing, Business Continuity &amp; Disaster Recovery, Databases, Programming 1–4</div>
+          <div class="edu-detail" style="margin-top:0.8mm;">Practical project: penetration test against CERN infrastructure (Geneva) — vulnerability analysis, exploitation (Metasploit), and structured report</div>
+          <div class="edu-detail" style="margin-top:0.8mm;">Internship: 20 ECTS (semester 5) · T-Systems Cyber Security Austria</div>
+          <div class="edu-thesis">Thesis: <em>Data Science for Malware Analysis</em></div>
+        </div>
+
+        <div class="edu-entry">
+          <div class="edu-header">
+            <div class="edu-title">Matura (A-Levels equivalent) — passed</div>
+            <div class="edu-date">2011 – 2019</div>
+          </div>
+          <div class="edu-inst">Mary Ward Privatgymnasium und ORG · Sankt Pölten, Austria</div>
+          <div class="edu-detail">Upper secondary school · Focus: Business &amp; Management</div>
+          <div class="edu-detail" style="margin-top:0.5mm;">Examined subjects: German, English (B2), Mathematics, History, Business Ethics · Spanish (13 hrs/week, grades 5–8)</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SIDE COLUMN -->
+    <div class="side-col">
+
+      <!-- Core Skills -->
+      <div class="section">
+        <div class="s-section-title">Core Skills</div>
+
+        <div class="skill-group">
+          <div class="skill-group-label">Detection &amp; Response</div>
+          <span class="skill-pill">Splunk</span>
+          <span class="skill-pill">MS Sentinel</span>
+          <span class="skill-pill">KQL</span>
+          <span class="skill-pill">CrowdStrike</span>
+          <span class="skill-pill">EDR/XDR</span>
+          <span class="skill-pill">Alert Tuning</span>
+          <span class="skill-pill">Snort/Suricata</span>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-label">Offensive / Forensics</div>
+          <span class="skill-pill">Kali Linux</span>
+          <span class="skill-pill">Metasploit</span>
+          <span class="skill-pill">Burp Suite</span>
+          <span class="skill-pill">Nmap</span>
+          <span class="skill-pill">Ghidra</span>
+          <span class="skill-pill">Volatility</span>
+          <span class="skill-pill">FTK Imager</span>
+          <span class="skill-pill">Wireshark</span>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-label">Frameworks &amp; Standards</div>
+          <span class="skill-pill">MITRE ATT&amp;CK</span>
+          <span class="skill-pill">Cyber Kill Chain</span>
+          <span class="skill-pill">STRIDE</span>
+          <span class="skill-pill">ISO 27001/27005</span>
+          <span class="skill-pill">ITIL</span>
+          <span class="skill-pill">NIS2</span>
+          <span class="skill-pill">GDPR</span>
+          <span class="skill-pill">BCM (ISO 22301)</span>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-label">Infrastructure &amp; Hardening</div>
+          <span class="skill-pill">Windows Server</span>
+          <span class="skill-pill">Linux (SELinux)</span>
+          <span class="skill-pill">Ansible</span>
+          <span class="skill-pill">VMware/VirtualBox</span>
+          <span class="skill-pill">BitLocker/LUKS</span>
+          <span class="skill-pill">Group Policy</span>
+          <span class="skill-pill">CPS/SCADA</span>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-label">Cryptography &amp; Privacy</div>
+          <span class="skill-pill">PKI / TLS</span>
+          <span class="skill-pill">MPC (Sharemind)</span>
+          <span class="skill-pill">Homomorphic Enc.</span>
+          <span class="skill-pill">Post-Quantum Crypto</span>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-label">Programming</div>
+          <span class="skill-pill">Python</span>
+          <span class="skill-pill">Bash / PowerShell</span>
+          <span class="skill-pill">Java / Kotlin</span>
+          <span class="skill-pill">Swift</span>
+          <span class="skill-pill">KQL</span>
+          <span class="skill-pill">Git</span>
+        </div>
+      </div>
+
+      <!-- Languages -->
+      <div class="section">
+        <div class="s-section-title">Languages</div>
+        <div class="lang-row"><span>German</span><span class="lang-level">Native</span></div>
+        <div class="lang-row"><span>English</span><span class="lang-level">C1 · TOEFL 87/120</span></div>
+        <div class="lang-row"><span>Spanish</span><span class="lang-level">Basic (A2)</span></div>
+      </div>
+
+      <!-- Key Courses -->
+      <div class="section">
+        <div class="s-section-title">Key Courses</div>
+        <div class="detail-item">System Forensics (grade: 5)</div>
+        <div class="detail-item">Cyber Incident Handling (5)</div>
+        <div class="detail-item">Info Systems Attacks &amp; Defence (5)</div>
+        <div class="detail-item">Hardening OS &amp; Services (5)</div>
+        <div class="detail-item">Human Aspects of CyberSec (5)</div>
+        <div class="detail-item">Math for Computer Science (5)</div>
+        <div class="detail-item">Privacy-preserving Technologies (4)</div>
+        <div class="detail-item">CPS Security Fundamentals (A)</div>
+        <div class="detail-item">Security Management 1 &amp; 3 (A)</div>
+        <div class="detail-item">Penetration Testing &amp; Audits</div>
+      </div>
+
+      <!-- Interests -->
+      <div class="section">
+        <div class="s-section-title">Interests</div>
+        <div class="detail-item">Tennis &amp; Volleyball</div>
+        <div class="detail-item">Running &amp; Kickboxing</div>
+        <div class="detail-item">Electric Longboarding</div>
+        <div class="detail-item">Gaming</div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
