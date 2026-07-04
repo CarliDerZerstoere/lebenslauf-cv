@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Motivationsschreiben — Nikolaus Riedl</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:   #1a2740;
+    --accent: #2a5298;
+    --text:   #1e2432;
+    --muted:  #6b7280;
+    --rule:   #dde1e8;
+  }
+
+  html, body {
+    background: #e0e3e9;
+    font-family: 'Inter', sans-serif;
+    font-size: 9.8pt;
+    line-height: 1.32;
+    color: var(--text);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ── PAGE WRAPPER ── */
+  .letter-page {
+    width: 210mm;
+    height: 297mm;
+    background: #fff;
+    margin: 24px auto;
+    padding: 15mm 25mm; /* 15mm top/bottom, 25mm left/right for compact layout */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 6px 40px rgba(0,0,0,0.14);
+    position: relative;
+  }
+
+  /* ── HEADER (MATCHES CV COLOR THEME) ── */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 3mm;
+    margin-bottom: 4mm;
+  }
+
+  .header-left h1 {
+    font-family: 'Source Serif 4', serif;
+    font-size: 18pt;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.1;
+  }
+
+  .header-left .subtitle {
+    font-size: 8.5pt;
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 0.8mm;
+  }
+
+  .header-right {
+    text-align: right;
+    font-size: 8pt;
+    color: var(--muted);
+    line-height: 1.35;
+  }
+
+  .header-right a {
+    color: var(--muted);
+    text-decoration: none;
+  }
+
+  /* ── ADDRESSES & DATE ── */
+  .meta-block {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4mm;
+    font-size: 9pt;
+  }
+
+  .recipient-address {
+    line-height: 1.35;
+    color: var(--text);
+  }
+
+  .sender-address {
+    text-align: right;
+    line-height: 1.35;
+    color: var(--muted);
+  }
+
+  .date-block {
+    text-align: right;
+    margin-bottom: 3mm;
+    font-size: 9pt;
+    color: var(--text);
+  }
+
+  /* ── SUBJECT LINE ── */
+  .subject-block {
+    margin-bottom: 3mm;
+  }
+
+  .subject-block h2 {
+    font-size: 11pt;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.25;
+  }
+
+  .subject-block .reference {
+    font-size: 9pt;
+    color: var(--accent);
+    font-weight: 500;
+    margin-top: 1mm;
+  }
+
+  /* ── CONTENT BODY ── */
+  .letter-body {
+    flex: 1;
+    font-size: 9.8pt;
+    line-height: 1.32;
+    color: var(--text);
+  }
+
+  .letter-body p {
+    margin-bottom: 2.5mm;
+    text-align: justify;
+  }
+
+  .letter-body ul {
+    margin-bottom: 2.5mm;
+    padding-left: 5mm;
+  }
+
+  .letter-body li {
+    margin-bottom: 1.5mm;
+    text-align: justify;
+  }
+
+  .letter-body li strong {
+    color: var(--navy);
+  }
+
+  /* ── SIGNATURE ── */
+  .signature-block {
+    margin-top: 3mm;
+    font-size: 9.8pt;
+  }
+
+  .signature-block .salutation {
+    margin-bottom: 5mm;
+  }
+
+  .signature-block .name {
+    font-weight: 600;
+    color: var(--navy);
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    html, body {
+      background: white;
+      margin: 0;
+      padding: 0;
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    .letter-page {
+      margin: 0 !important;
+      box-shadow: none !important;
+      width: 210mm !important;
+      height: 297mm !important;
+      padding: 15mm 25mm !important; /* 15mm top/bottom, 25mm left/right for compact layout */
+      overflow: hidden !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="letter-page">
+
+  <!-- Header Block (styled similarly to CV) -->
+  <header class="header">
+    <div class="header-left">
+      <h1>Nikolaus Riedl</h1>
+    </div>
+    <div class="header-right">
+      <p>+43 699 16056705 · <a href="mailto:niki.riedl@kstp.at">niki.riedl@kstp.at</a></p>
+      <p><a href="https://linkedin.com/in/nikolaus-riedl-393a1327b/" target="_blank">linkedin.com/in/nikolaus-riedl</a></p>
+    </div>
+  </header>
+
+  <!-- Addresses Block -->
+  <div class="meta-block">
+    <div class="recipient-address">
+      <strong>Direktion Staatsschutz und Nachrichtendienst</strong><br>
+      Bundesministerium für Inneres<br>
+      Herrengasse 7<br>
+      1010 Wien
+    </div>
+    <div class="sender-address">
+      Nikolaus Riedl<br>
+      Sibalstraße 3<br>
+      3104 Sankt Pölten
+    </div>
+  </div>
+
+  <!-- Date Block -->
+  <div class="date-block">
+    Sankt Pölten, 08. Juni 2026
+  </div>
+
+  <!-- Subject Block -->
+  <div class="subject-block">
+    <h2>Bewerbung als Softwareentwickler / DevOps (m/w/d)</h2>
+    <div class="reference">Referenz: Arbeiten in der Direktion Staatsschutz und Nachrichtendienst - Informations- und Kommunikationstechnologie</div>
+  </div>
+
+  <!-- Letter Body -->
+  <div class="letter-body">
+    <p>Sehr geehrte Damen und Herren,</p>
+    
+    <p>ich bewerbe mich für die Position als Softwareentwickler / DevOps (m/w/d). Meine Eignung für diese Position basiert auf meiner fundierten Ausbildung in der IT-Sicherheit und meiner praktischen Erfahrung in der Entwicklung und Bereitstellung automatisierter Lösungen. Mein Fokus liegt hierbei auf der sicheren Verknüpfung von Entwicklung und Betrieb (DevSecOps), um die Digitalisierung der DSN resilient zu gestalten.</p>
+
+    <p>Meine praktische Laufbahn bei T-Systems Cyber Security Austria zeigt meinen Weg in die DevOps-Rolle: Gestartet in der Sicherheitsüberwachung (SOC), habe ich mich schnell auf die Programmierung von Softwarelösungen zur Prozessautomatisierung spezialisiert. So konzipierte und entwickelte ich eigenständig einen sicheren Ticket-Synchronisationsserver in Python. Zudem lag die Log-Integration und Use-Case-Entwicklung bei der Anbindung neuer Kunden an SIEM-Systeme (Splunk, QRadar) in meiner Verantwortung, was eine enge Abstimmung mit den IT-Betriebsteams der Kunden erforderte.</p>
+
+    <p>Dieses praktische Fundament wird durch eine tiefe akademische Ausbildung gestützt. Durch eine viersemestrige Programmierausbildung (Python, Java, C#, C) kann ich Code auf Augenhöhe lesen und anpassen. Mein Systemverständnis reicht dabei bis auf die Kernel-Ebene: Im Studium habe ich eigene Linux-Kernel kompiliert, Kernel-Module und Capabilities verwaltet und Mandatory-Access-Control-Systeme wie SELinux konfiguriert. Auch die Absicherung von Windows-Unternehmensnetzwerken über Active Directory Gruppenrichtlinien ist mir vertraut.</p>
+
+    <p>Als praktisches Programmierprojekt in Python habe ich im Rahmen meiner Masterarbeit an der Technischen Universität Tallinn eine Pipeline zur automatischen Generierung und Validierung von virtuellen Netzwerkködern (Honeynets) entwickelt. Zudem konnte ich bei einem Praxisprojekt am Kernforschungszentrum CERN Erfahrungen sammeln, indem ich Sicherheitsanalysen an der Netzinfrastruktur mittels Metasploit durchgeführt habe.</p>
+
+    <p>Als österreichischer Staatsbürger mit abgeschlossenem Grundwehrdienst bringe ich die für den Staatsschutz unerlässliche Zuverlässigkeit, Diskretion und Pflichtbewusstsein mit. Meine hohe Einarbeitungsgeschwindigkeit hat sich bereits beim Wechsel von einer allgemeinbildenden Schule in das hochtechnische Studium der IT-Sicherheit gezeigt. Die Bereitschaft zur Absolvierung der erweiterten Sicherheitsüberprüfung ist für mich selbstverständlich.</p>
+  </div>
+
+  <!-- Signature Block -->
+  <div class="signature-block">
+    <div class="salutation">
+      Da ich mein Masterstudium im Juni 2026 erfolgreich abschließe, stehe ich Ihnen ab sofort vollzeitig zur Verfügung. Ich freue mich auf die Gelegenheit, meine Eignung in einem persönlichen Gespräch unter Beweis zu stellen.<br><br>
+      Mit freundlichen Grüßen
+    </div>
+    <div class="name">Nikolaus Riedl</div>
+  </div>
+
+</div>
+
+</body>
+</html>

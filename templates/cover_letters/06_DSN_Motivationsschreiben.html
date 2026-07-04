@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Motivationsschreiben — Nikolaus Riedl</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:   #1a2740;
+    --accent: #2a5298;
+    --text:   #1e2432;
+    --muted:  #6b7280;
+    --rule:   #dde1e8;
+  }
+
+  html, body {
+    background: #e0e3e9;
+    font-family: 'Inter', sans-serif;
+    font-size: 9.8pt;
+    line-height: 1.32;
+    color: var(--text);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ── PAGE WRAPPER ── */
+  .letter-page {
+    width: 210mm;
+    height: 297mm;
+    background: #fff;
+    margin: 24px auto;
+    padding: 15mm 25mm; /* 15mm top/bottom, 25mm left/right for compact layout */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 6px 40px rgba(0,0,0,0.14);
+    position: relative;
+  }
+
+  /* ── HEADER (MATCHES CV COLOR THEME) ── */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 3mm;
+    margin-bottom: 4mm;
+  }
+
+  .header-left h1 {
+    font-family: 'Source Serif 4', serif;
+    font-size: 18pt;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.1;
+  }
+
+  .header-left .subtitle {
+    font-size: 8.5pt;
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 0.8mm;
+  }
+
+  .header-right {
+    text-align: right;
+    font-size: 8pt;
+    color: var(--muted);
+    line-height: 1.35;
+  }
+
+  .header-right a {
+    color: var(--muted);
+    text-decoration: none;
+  }
+
+  /* ── ADDRESSES & DATE ── */
+  .meta-block {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4mm;
+    font-size: 9pt;
+  }
+
+  .recipient-address {
+    line-height: 1.35;
+    color: var(--text);
+  }
+
+  .sender-address {
+    text-align: right;
+    line-height: 1.35;
+    color: var(--muted);
+  }
+
+  .date-block {
+    text-align: right;
+    margin-bottom: 3mm;
+    font-size: 9pt;
+    color: var(--text);
+  }
+
+  /* ── SUBJECT LINE ── */
+  .subject-block {
+    margin-bottom: 3mm;
+  }
+
+  .subject-block h2 {
+    font-size: 11pt;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.25;
+  }
+
+  .subject-block .reference {
+    font-size: 9pt;
+    color: var(--accent);
+    font-weight: 500;
+    margin-top: 1mm;
+  }
+
+  /* ── CONTENT BODY ── */
+  .letter-body {
+    flex: 1;
+    font-size: 9.8pt;
+    line-height: 1.32;
+    color: var(--text);
+  }
+
+  .letter-body p {
+    margin-bottom: 2.5mm;
+    text-align: justify;
+  }
+
+  .letter-body ul {
+    margin-bottom: 2.5mm;
+    padding-left: 5mm;
+  }
+
+  .letter-body li {
+    margin-bottom: 1.5mm;
+    text-align: justify;
+  }
+
+  .letter-body li strong {
+    color: var(--navy);
+  }
+
+  /* ── SIGNATURE ── */
+  .signature-block {
+    margin-top: 3mm;
+    font-size: 9.8pt;
+  }
+
+  .signature-block .salutation {
+    margin-bottom: 5mm;
+  }
+
+  .signature-block .name {
+    font-weight: 600;
+    color: var(--navy);
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    html, body {
+      background: white;
+      margin: 0;
+      padding: 0;
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    .letter-page {
+      margin: 0 !important;
+      box-shadow: none !important;
+      width: 210mm !important;
+      height: 297mm !important;
+      padding: 15mm 25mm !important; /* 15mm top/bottom, 25mm left/right for compact layout */
+      overflow: hidden !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="letter-page">
+
+  <!-- Header Block (styled similarly to CV) -->
+  <header class="header">
+    <div class="header-left">
+      <h1>Nikolaus Riedl</h1>
+      <div class="subtitle">Cybersecurity Analyst</div>
+    </div>
+    <div class="header-right">
+      <p>+43 699 16056705 · <a href="mailto:niki.riedl@kstp.at">niki.riedl@kstp.at</a></p>
+      <p><a href="https://linkedin.com/in/nikolaus-riedl-393a1327b/" target="_blank">linkedin.com/in/nikolaus-riedl</a></p>
+    </div>
+  </header>
+
+  <!-- Addresses Block -->
+  <div class="meta-block">
+    <div class="recipient-address">
+      <strong>Direktion Staatsschutz und Nachrichtendienst</strong><br>
+      Bundesministerium für Inneres<br>
+      Herrengasse 7<br>
+      1010 Wien
+    </div>
+    <div class="sender-address">
+      Nikolaus Riedl<br>
+      Sibalstraße 3<br>
+      3104 Sankt Pölten
+    </div>
+  </div>
+
+  <!-- Date Block -->
+  <div class="date-block">
+    Sankt Pölten, 08. Juni 2026
+  </div>
+
+  <!-- Subject Block -->
+  <div class="subject-block">
+    <h2>Bewerbung als Cyber und Malware Analyst (männlich / weiblich / divers)</h2>
+    <div class="reference">Referenz: Arbeiten in der Direktion Staatsschutz und Nachrichtendienst - Informations- und Kommunikationstechnologie</div>
+  </div>
+
+  <!-- Letter Body -->
+  <div class="letter-body">
+    <p>Sehr geehrte Damen und Herren,</p>
+    
+    <p>ich bewerbe mich für die Position als Cyber und Malware Analyst (männlich / weiblich / divers). Meine Eignung für diese Position basiert auf einer spezialisierten Sicherheitsausbildung im Bereich der Informations- und Kommunikationstechnologie sowie praktischer Erfahrung in der operativen Erkennung und Analyse von Cyber-Bedrohungen.</p>
+
+    <ul>
+      <li>
+        <strong>Bewältigung von Cyber-Angriffen auf Kritische Infrastrukturen:</strong><br>
+        In meiner über einjährigen Praxisarbeit im Sicherheitszentrum (Security Operations Center) von T-Systems Cyber Security Austria habe ich Unternehmenskunden und kritische Infrastrukturen aktiv vor Angriffen geschützt. Meine Hauptaufgabe lag darin, verdächtige Netzwerkaktivitäten und Sicherheitswarnungen frühzeitig zu erkennen, zu bewerten (Triage) und Abwehrmaßnahmen einzuleiten. Ergänzend habe ich mich in meinem Masterstudium an der Technischen Universität Tallinn auf den Schutz industrieller Steuerungs- und Versorgungsanlagen (Cyber-Physical Systems) spezialisiert.
+      </li>
+      <li>
+        <strong>Analyse von Techniken, Taktiken und Angriffsmustern:</strong><br>
+        Um Angreifer und deren Methoden zu verstehen, analysiere ich Schadsoftware und sichere digitale Spuren nach einem Sicherheitsvorfall (IT-Forensik). Dies habe ich sowohl in meinem Studium anhand praktischer Laborszenarien (u.a. Memory-Forensik mit Volatility) als auch im Rahmen meiner Abschlussarbeiten vertieft – insbesondere bei der automatischen Erkennung mobiler Schadsoftware mittels Machine Learning (Bachelorarbeit) und in einem Penetrationstest-Projekt für das Forschungszentrum CERN.
+      </li>
+      <li>
+        <strong>Resilienzsteigerung und Aufbereitung von Erkenntnissen:</strong><br>
+        Ein wesentlicher Teil meiner Ausbildung an der Fachhochschule Sankt Pölten lag im Sicherheitsmanagement. Ich weiß, wie Risiken strukturiert bewertet werden (Risikomanagement nach ISO 27005) und wie Notfallkonzepte (Business Continuity Management nach ISO 22301) erstellt werden, um die Betriebsbereitschaft von Organisationen zu sichern. Zudem bin ich es gewohnt, komplexe technische Erkenntnisse verständlich zu dokumentieren und als konkrete Handlungsanweisungen (Playbooks) für verschiedene Zielgruppen aufzubereiten.
+      </li>
+      <li>
+        <strong>Persönliche Eignung und Zuverlässigkeit für den Staatsschutz:</strong><br>
+        Als österreichischer Staatsbürger mit abgeschlossenem Grundwehrdienst beim Österreichischen Bundesheer bringe ich das erforderliche Pflichtbewusstsein mit. Meine Zuverlässigkeit, Vertrauenswürdigkeit und Genauigkeit habe ich unter anderem während meiner Tätigkeit bei der Österreichischen Post Aktiengesellschaft unter Beweis gestellt, wo ich in eigenverantwortlichen Bezirken mit der Auszahlung von staatlichen Geldern und Renten betraut war. Die Bereitschaft zur Absolvierung einer erweiterten Sicherheitsüberprüfung ist für mich selbstverständlich.
+      </li>
+    </ul>
+  </div>
+
+  <!-- Signature Block -->
+  <div class="signature-block">
+    <div class="salutation">
+      Mein Masterstudium der Cybersecurity an der Technischen Universität Tallinn habe ich bereits erfolgreich abgeschlossen und warte derzeit auf die förmliche Ausstellung des Abschlusszeugnisses. Ich stehe der Direktion Staatsschutz und Nachrichtendienst somit ab sofort für eine vollzeitige Anstellung zur Verfügung und freue mich auf die Gelegenheit zu einem persönlichen Gespräch.<br><br>
+      Mit freundlichen Grüßen
+    </div>
+    <div class="name">Nikolaus Riedl</div>
+  </div>
+
+</div>
+
+</body>
+</html>
